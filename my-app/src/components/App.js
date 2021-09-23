@@ -1,8 +1,8 @@
 import React from 'react';
-
+import {PostList }from './postList';
 
 export const App =()=>{
   return(
-    <div>Hello</div>
+    <PostList></PostList>
   )
 }
