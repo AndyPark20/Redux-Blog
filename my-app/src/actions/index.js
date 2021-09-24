@@ -1,6 +1,6 @@
 
 
- export const feetchPosts =() =>{
+ export const fetchPosts =() =>{
    return {
      type:'FETCH_POSTS'
    }
