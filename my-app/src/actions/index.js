@@ -4,6 +4,9 @@ import jsonPlaceHolder from "../apis/jsonPlaceHolder";
 
   // Bad approach! --> Breaking ruls of action creator!!!
   const response = await jsonPlaceHolder.get('/posts');
+  //We think we are returning plain Js, but in reality because of Async await function,
+  //When FetchPost action creator is called, it is returning request function (jsonPlaceHolder)  rather than plain JS object.
+  //That is why we are seeing an error message!
 
    return {
      type:'FETCH_POSTS',
