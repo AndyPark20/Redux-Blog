@@ -8,6 +8,11 @@ import jsonPlaceHolder from "../apis/jsonPlaceHolder";
   //When FetchPost action creator is called, it is returning request function (jsonPlaceHolder)  rather than plain JS object.
   //That is why we are seeing an error message!
 
+  /***********************  OR *********************************/
+  //we can use WITHOUT AWAIT!
+  //However, the components can run faster than fetching data.
+  //As a result, by the time the reducer looks at the action form, there are no data because its still fetching!
+
    return {
      type:'FETCH_POSTS',
      payload:response
