@@ -1,9 +1,7 @@
 import jsonPlaceHolder from "../apis/jsonPlaceHolder";
 
-export const fetchPosts =() => {
-
-  return async function(dispatch, getState) {
-
+export const fetchPosts =() =>
+  async dispatch => {
     // Bad approach! --> Breaking ruls of action creator!!!
     const response =  await jsonPlaceHolder.get('/posts');
     //We think we are returning plain Js, but in reality because of Async await function,
@@ -23,7 +21,7 @@ export const fetchPosts =() => {
 
     dispatch({type:'FETCH_POSTS', payload:response})
   };
-};
+
 
 
 
