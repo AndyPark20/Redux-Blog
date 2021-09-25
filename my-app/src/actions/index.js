@@ -13,6 +13,10 @@ import jsonPlaceHolder from "../apis/jsonPlaceHolder";
   //However, the components can run faster than fetching data.
   //As a result, by the time the reducer looks at the action form, there are no data because its still fetching!
 
+  //MIDDLEWARE
+  // Plain javascript function that gets called everytime it get dispatched.
+  //Has the ability to control, modify actions.
+
    return {
      type:'FETCH_POSTS',
      payload:response
