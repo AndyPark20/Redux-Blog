@@ -1,11 +1,11 @@
 import jsonPlaceHolder from "../apis/jsonPlaceHolder";
 
-export const fetchPosts = async () => {
+export const fetchPosts =() => {
 
-  return function (dispatch, getState) {
+  return async function(dispatch, getState) {
 
     // Bad approach! --> Breaking ruls of action creator!!!
-    const response =  jsonPlaceHolder.get('/posts');
+    const response =  await jsonPlaceHolder.get('/posts');
     //We think we are returning plain Js, but in reality because of Async await function,
     //When FetchPost action creator is called, it is returning request function (jsonPlaceHolder)  rather than plain JS object.
     //That is why we are seeing an error message!
@@ -21,10 +21,7 @@ export const fetchPosts = async () => {
 
     //Redux thunk can return action objects, or it can return functions
 
-    return {
-      type: 'FETCH_POSTS',
-      payload: response
-    };
+    dispatch({type:'FETCH_POSTS', payload:response})
   };
 };
 
