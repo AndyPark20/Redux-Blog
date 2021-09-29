@@ -18,7 +18,6 @@ export const fetchPosts =() =>
     //Has the ability to control, modify actions.
 
     //Redux thunk can return action objects, or it can return functions
-
     dispatch({type:'FETCH_POSTS', payload:response})
   };
 
