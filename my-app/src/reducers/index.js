@@ -1,5 +1,5 @@
 import  {combineReducers} from 'redux';
 
 export default combineReducers({
-  numbers: ()=>10
+  numbers: ()=>10;
 })
